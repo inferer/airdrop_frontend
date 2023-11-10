@@ -24,7 +24,7 @@ body {
 }
 
 
-@font-face {
+/* @font-face {
   font-family: Poppins;
   src: url('https://website-1315068501.cos.ap-nanjing.myqcloud.com/Poppins-Regular.ttf');
 }
@@ -51,7 +51,7 @@ body {
 @font-face {
   font-family: DMSans-Regular;
   src: url('https://website-1315068501.cos.ap-nanjing.myqcloud.com/DMSans-Regular.ttf');
-}
+} */
 
 .font-fnormal{
   font-family: Poppins;

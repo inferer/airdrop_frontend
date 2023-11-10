@@ -25,7 +25,7 @@ export const useIFRAirdrop = () => {
       const allowance = await tokenContract.allowance(account, IFRAirdropAddress)
       return allowance
     }
-  }, [IFRToken, account])
+  }, [IFRToken, account, IFRAirdropAddress])
 
 
   const handleClaim = useCallback(async () => {
@@ -58,7 +58,12 @@ export const useIFRAirdrop = () => {
     }
   }, [
     account,
-    handleGetAllowance
+    handleGetAllowance,
+    IFRAridropContract,
+    IFRTokenAddress,
+    callWithGasPrice,
+    getAccountProof,
+    handleApprove
   ])
 
 

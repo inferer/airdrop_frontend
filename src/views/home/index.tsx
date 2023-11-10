@@ -72,7 +72,7 @@ const HomePage = () => {
     } catch (err) {
       console.error(err);
     }
-  }, [onPrresent, account])
+  }, [onPrresent, account, getUserNonce, verifyUserNonce])
 
   const handleSend = useCallback(async () => {
     if (account) {
@@ -84,7 +84,7 @@ const HomePage = () => {
         setAirdropRes(airdropRes)
       }
     }
-  }, [account, handleSign])
+  }, [account, handleSign, amount, labelType, tokenAddress, verifyAirdropToken])
 
 
 
