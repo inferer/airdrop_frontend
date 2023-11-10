@@ -14,4 +14,6 @@ export interface UserState {
   register: (account: string) => void,
   getUserNonce: (address: string) => any,
   verifyUserNonce: (address: string, sign: string) => any,
+  verifyAirdropToken: (tokenAddress: string, amount: string, type: number, account: string, sign: string) => any
+  getAccountProof: (address: string, tokenAddress: string) => any
 }

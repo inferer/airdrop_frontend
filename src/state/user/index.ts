@@ -1,6 +1,7 @@
 import { fetcher, poster } from '@/utils/axios'
 import { create } from 'zustand'
 import { IResult, UserState } from './types'
+import BigNumber from 'bignumber.js'
 
 const useUserStore = create<UserState>()((set, get) => ({
   userId: '',
@@ -27,6 +28,16 @@ const useUserStore = create<UserState>()((set, get) => ({
   },
   verifyUserNonce: async (account: string, sign: string) => {
     const res = await poster(`/api/user/verify`, { address: account, sign })
+
+    return res
+  },
+  verifyAirdropToken: async (tokenAddress: string, amount: string, type: number, account: string, sign: string) => {
+    const res = await poster(`/api/airdrop/setRootHashV2`, { tokenAddress, amount: new BigNumber(amount).multipliedBy(10 ** 18).toString(10), type, account, sign })
+
+    return res
+  },
+  getAccountProof:  async (account: string, tokenAddress: string) => {
+    const res = await fetcher(`/api/airdrop/getAddressProof`, { address: account, tokenAddress })
 
     return res
   },

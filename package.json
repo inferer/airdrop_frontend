@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev -p 8890",
     "build": "next build",
-    "start": "next start -p 8792",
+    "start": "next start -p 13881",
     "upload": "node scripts/upload.js",
     "lint": "next lint"
   },
@@ -21,10 +21,12 @@
     "antd": "^5.6.3",
     "autoprefixer": "10.4.14",
     "axios": "^1.4.0",
+    "bignumber.js": "^9.1.2",
     "cos-nodejs-sdk-v5": "^2.12.4",
     "echarts": "^5.4.2",
     "eslint": "8.43.0",
     "eslint-config-next": "13.4.6",
+    "ethers": "^6.8.1",
     "lodash": "^4.17.21",
     "moment": "^2.29.4",
     "next": "13.4.6",
