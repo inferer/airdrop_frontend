@@ -17,10 +17,10 @@ const GlobalStatus = () => {
   }, [account, getUserID])
 
   useEffect(() => {
-    setTimeout(() => {
-      const connectorId = window?.localStorage?.getItem(connectorLocalStorageKey) as ConnectorNames
-      connectorId && login(connectorId)
-    }, 300)
+    // setTimeout(() => {
+    //   const connectorId = window?.localStorage?.getItem(connectorLocalStorageKey) as ConnectorNames
+    //   connectorId && login(connectorId)
+    // }, 300)
 
   }, [login])
 

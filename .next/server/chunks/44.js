@@ -1,20 +1,7 @@
 "use strict";
-exports.id = 302;
-exports.ids = [302];
+exports.id = 44;
+exports.ids = [44];
 exports.modules = {
-
-/***/ 8281:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   O: () => (/* binding */ connectorLocalStorageKey)
-/* harmony export */ });
-/* unused harmony export walletLocalStorageKey */
-const connectorLocalStorageKey = "connectorIdInferer";
-const walletLocalStorageKey = "wallet";
-
-
-/***/ }),
 
 /***/ 784:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
@@ -86,6 +73,8 @@ const ModalProvider = ({ children })=>{
                 style: {
                     zIndex: 999,
                     position: "fixed",
+                    left: 0,
+                    top: 0,
                     transition: "opacity ease-in 0.15s"
                 },
                 children: [
@@ -147,7 +136,7 @@ const RPC_URL = _utils_web3React__WEBPACK_IMPORTED_MODULE_1__/* .RPC_URLS_ID */ 
 
 /***/ }),
 
-/***/ 5685:
+/***/ 4527:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 
@@ -168,8 +157,10 @@ var bsc_connector_ = __webpack_require__(8454);
 var injected_connector_ = __webpack_require__(6590);
 // EXTERNAL MODULE: external "@web3-react/walletconnect-connector"
 var walletconnect_connector_ = __webpack_require__(9795);
-// EXTERNAL MODULE: ./src/components/walletmodal/config.tsx
-var config = __webpack_require__(8281);
+;// CONCATENATED MODULE: ./src/components/walletmodal/config.tsx
+const connectorLocalStorageKey = "connectorIdInferer";
+const walletLocalStorageKey = "wallet";
+
 // EXTERNAL MODULE: ./src/utils/web3React.ts
 var web3React = __webpack_require__(9391);
 ;// CONCATENATED MODULE: ./src/utils/wallet.ts
@@ -251,7 +242,7 @@ const useAuth = ()=>{
     // const { toastError } = useToast()
     const login = (0,external_react_.useCallback)(async (connectorID)=>{
         const connectorOrGetConnector = web3React/* connectorsByName */.BA[connectorID];
-        window?.localStorage?.setItem(config/* connectorLocalStorageKey */.O, connectorID);
+        window?.localStorage?.setItem(connectorLocalStorageKey, connectorID);
         const connector = connectorOrGetConnector;
         if (typeof connector !== "function" && connector) {
             activate(connector, async (error)=>{
@@ -263,7 +254,7 @@ const useAuth = ()=>{
                         activate(connector);
                     }
                 } else {
-                    window?.localStorage?.removeItem(config/* connectorLocalStorageKey */.O);
+                    window?.localStorage?.removeItem(connectorLocalStorageKey);
                     if (error instanceof injected_connector_.NoEthereumProviderError || error instanceof bsc_connector_.NoBscProviderError) {
                     // toastError()
                     } else if (error instanceof injected_connector_.UserRejectedRequestError || error instanceof walletconnect_connector_.UserRejectedRequestError) {
@@ -278,7 +269,7 @@ const useAuth = ()=>{
                 }
             });
         } else {
-            window?.localStorage?.removeItem(config/* connectorLocalStorageKey */.O);
+            window?.localStorage?.removeItem(connectorLocalStorageKey);
         // toastError(t('Unable to find connector'), t('The connector config is wrong'))
         }
     }, [

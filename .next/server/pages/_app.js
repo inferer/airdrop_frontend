@@ -75,14 +75,12 @@ __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __we
 /* harmony export */   Z: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _hooks_useActiveWeb3React__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9293);
-/* harmony import */ var _hooks_useAuth__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5685);
+/* harmony import */ var _hooks_useAuth__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4527);
 /* harmony import */ var _state__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3067);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(6689);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _walletmodal_config__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(8281);
 var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_state__WEBPACK_IMPORTED_MODULE_2__]);
 _state__WEBPACK_IMPORTED_MODULE_2__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];
-
 
 
 
@@ -100,10 +98,10 @@ const GlobalStatus = ()=>{
         getUserID
     ]);
     (0,react__WEBPACK_IMPORTED_MODULE_3__.useEffect)(()=>{
-        setTimeout(()=>{
-            const connectorId = window?.localStorage?.getItem(_walletmodal_config__WEBPACK_IMPORTED_MODULE_4__/* .connectorLocalStorageKey */ .O);
-            connectorId && login(connectorId);
-        }, 300);
+    // setTimeout(() => {
+    //   const connectorId = window?.localStorage?.getItem(connectorLocalStorageKey) as ConnectorNames
+    //   connectorId && login(connectorId)
+    // }, 300)
     }, [
         login
     ]);
@@ -333,7 +331,7 @@ module.exports = import("zustand");;
 var __webpack_require__ = require("../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [722,893,302], () => (__webpack_exec__(9942)));
+var __webpack_exports__ = __webpack_require__.X(0, [722,893,44], () => (__webpack_exec__(9942)));
 module.exports = __webpack_exports__;
 
 })();
