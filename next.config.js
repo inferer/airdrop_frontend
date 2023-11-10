@@ -16,7 +16,7 @@ const nextConfig = {
     return [
       {
         source: '/api/:path*',
-        destination: isDev ? `http://36.26.92.165:13884/api/:path*` : `https://api8.inferer.xyz/api/identity/:path*`
+        destination: isDev ? `http://36.26.92.165:13884/api/:path*` : `http://36.26.92.165:13884/api/:path*`
       },
       {
         source: '/api/trends/:path*',

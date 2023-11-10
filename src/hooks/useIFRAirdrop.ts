@@ -55,6 +55,8 @@ export const useIFRAirdrop = () => {
       }
       
 
+    } else {
+      alert('Please login')
     }
   }, [
     account,

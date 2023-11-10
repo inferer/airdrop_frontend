@@ -83,6 +83,8 @@ const HomePage = () => {
         console.log(airdropRes)
         setAirdropRes(airdropRes)
       }
+    } else {
+      alert('Please login')
     }
   }, [account, handleSign, amount, labelType, tokenAddress, verifyAirdropToken])
 
